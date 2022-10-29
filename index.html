@@ -18,6 +18,11 @@
             <div class="container">
                 <a href="#main"><img class="logo" src="./public/img/logo.png" alt="logo-text"></a>
             </div>
+
+            <input class="menu-btn" type="checkbox" id="menu-btn">
+                <label class="menu-icon" for="menu-btn">
+                    <span class="nav-icon"></span>
+                </label>
             <ul class="menu" id="navBar">
                 <li><a class="btn" href="#main">Home</a></li>
                 <li><a class="btn" href="#about-me">About Me</a></li>
@@ -59,37 +64,39 @@
     <section id="skills">
         <div class="skills-img">
             <img src="./public//img/skills.jpg" alt="">
-        </div>    
-        <div class="s-box-container">
-            <div class="skill-heading">
-                <span>My Skills</span>
-                <h2>My Experties</h2>
-            </div>
-            <div class="skill-box">
-                <div class="s-box-icon">
-                    <img class="node" src="./public/img/node.png" alt="">
+        </div>  
+        <div class="skills-text">
+            <div class="s-box-container">
+                <div class="skill-heading">
+                    <span>My Skills</span>
+                    <h2>My Experties</h2>
                 </div>
-                <div class="s-box-text">
-                    <strong>Node.js</strong>
-                    <p>I use Node.js framework for building server-side applications. </p>
+                <div class="skill-box">
+                    <div class="s-box-icon">
+                        <img class="node" src="./public/img/node.png" alt="">
+                    </div>
+                    <div class="s-box-text">
+                        <strong>Node.js</strong>
+                        <p>I use Node.js framework for building server-side applications. </p>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-box">
-                <div class="s-box-icon">
-                    <img class="mongodb" src="./public/img/mongodb.png" alt="">
+                <div class="skill-box">
+                    <div class="s-box-icon">
+                        <img class="mongodb" src="./public/img/mongodb.png" alt="">
+                    </div>
+                    <div class="s-box-text">
+                        <strong>MongoDB</strong>
+                        <p>I use MongoDB as the database for my web-applications.</p>
+                    </div>
                 </div>
-                <div class="s-box-text">
-                    <strong>MongoDB</strong>
-                    <p>I use MongoDB as the database for my web-applications.</p>
-                </div>
-            </div>
-            <div class="skill-box">
-                <div class="s-box-icon">
-                    <img class="html" src="./public/img/html.png" alt="">
-                </div>
-                <div class="s-box-text">
-                    <strong>HTML</strong>
-                    <p>I use HTML for the Front-End Development of my web-applications.</p>
+                <div class="skill-box">
+                    <div class="s-box-icon">
+                        <img class="html" src="./public/img/html.png" alt="">
+                    </div>
+                    <div class="s-box-text">
+                        <strong>HTML</strong>
+                        <p>I use HTML for the Front-End Development of my web-applications.</p>
+                    </div>
                 </div>
                 <div class="skill-box">
                     <div class="s-box-icon">
@@ -100,17 +107,18 @@
                         <p>I use CSS for styling all of my web-applications.</p>
                     </div>
                 </div>
-            </div>
-            <div class="skill-box">
-                <div class="s-box-icon">
-                    <img class= "js" src="./public/img/js.png" alt="">
+                <div class="skill-box">
+                    <div class="s-box-icon">
+                        <img class= "js" src="./public/img/js.png" alt="">
+                    </div>
+                    <div class="s-box-text">
+                        <strong>JavaScript</strong>
+                        <p>I use JavaScript to create dynamic functions in web-applications.</p>
+                    </div>
                 </div>
-                <div class="s-box-text">
-                    <strong>JavaScript</strong>
-                    <p>I use JavaScript to create dynamic functions in web-applications.</p>
-                </div>
             </div>
-        </div>
+        </div>  
+       
     </section>
     <section id="portfolio">
         <div class="header">
@@ -123,8 +131,7 @@
         <div class="swiper-wrapper">
             <!-- Slides -->
             <div class="swiper-slide"><img src="./public/img/crs.png" alt=""></div>
-            <div class="swiper-slide"><img src="./public/img/sms.png" alt="">/div>
-            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide"><img src="./public/img/sms.png" alt=""></div>
             ...
         </div>
         <!-- If we need pagination -->
@@ -135,6 +142,8 @@
         <div class="swiper-button-next"></div>
     </div>
     </section>
+
+    
 
     <script>
     const swiper = new Swiper('.swiper', {
@@ -150,6 +159,37 @@
             prevEl: '.swiper-button-prev',
         },
     });
+    </script>
+
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "100589156201417");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v15.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
     </script>
 </body>
 </html>
